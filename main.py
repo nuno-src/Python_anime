@@ -112,9 +112,9 @@ if __name__ == '__main__':
         print("                     Choose an option")
         print("===================================================")
         print("  [1] - Show top animes ")
-        print("  [2] - Serarch anime")
-        print("  [3] - Serarch anime by ID")
-        print("  [4] - Serarch user")
+        print("  [2] - Search anime")
+        print("  [3] - Search anime by ID")
+        print("  [4] - Search user")
         print("  [exit]")
         print("===================================================")
 
