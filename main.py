@@ -42,7 +42,7 @@ def searchAnime():
         anime_url = search_anime["data"][i]['url']
         anime_title = search_anime["data"][0]['title']
         anime_title_english = search_anime["data"][i]['title_english']
-        anime_title_english = search_anime["data"][i]['type']
+        type = search_anime["data"][i]['type']
         episodes = search_anime["data"][i]['episodes']
         status = search_anime["data"][i]['status']
         score = search_anime["data"][i]['score']
@@ -50,7 +50,7 @@ def searchAnime():
         popularity = search_anime["data"][i]['popularity']
         year = search_anime["data"][i]['year']
 
-        print("Mal ID:",anime_id, "\nUrl:",anime_url, "\nTitle:",anime_title,"\nTitle(English):",anime_title_english,"\nEpisodes:",episodes,"\nSatus:",status,
+        print("Mal ID:",anime_id, "\nUrl:",anime_url, "\nTitle:",anime_title,"\nTitle(English):",anime_title_english,"\nEpisodes:",episodes,"\nType:",type,"\nSatus:",status,
               "\nScore:",score, "\nRank:",rank,"\nPopularity:",popularity, "\nYear:",year)
 
         print("\n----------------------------------------------------------------------------------------")
@@ -65,7 +65,6 @@ def searchAnimeID():
 
     url_search_id = f"https://api.jikan.moe/v4/anime/{anime_id}"
 
-    url_search_id = f"https://api.jikan.moe/v4/anime/{anime_id}"
 
     search_anime = requests.get(url_search_id).json()
 
@@ -73,7 +72,7 @@ def searchAnimeID():
     anime_url = search_anime["data"]['url']
     anime_title = search_anime["data"]['title']
     anime_title_english = search_anime["data"]['title_english']
-    anime_title_english = search_anime["data"]['type']
+    type = search_anime["data"]['type']
     episodes = search_anime["data"]['episodes']
     status = search_anime["data"]['status']
     score = search_anime["data"]['score']
@@ -82,7 +81,7 @@ def searchAnimeID():
     year = search_anime["data"]['year']
 
     print("Mal ID:", anime_id, "\nUrl:", anime_url, "\nTitle:", anime_title, "\nTitle(English):", anime_title_english,
-          "\nEpisodes:", episodes, "\nSatus:", status,
+          "\nEpisodes:", episodes, "\nType:", type, "\nSatus:", status,
           "\nScore:", score, "\nRank:", rank, "\nPopularity:", popularity, "\nYear:", year)
 
 
