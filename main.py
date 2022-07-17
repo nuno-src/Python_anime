@@ -8,6 +8,18 @@ import json
 
 url = "https://api.jikan.moe/v4/"
 
+check_connection = requests.get(url)
+if check_connection.status_code == 200:
+    pass
+elif check_connection.status_code == 400:
+    print("Pls check your internet connection")
+elif check_connection.status_code == 500:
+    print("The API seems to be having problems, pls try again later")
+else:
+    print("Something went wrong :(  Status Code:", check_connection.status_code)
+
+
+
 def topAnimes():
 
 
@@ -85,6 +97,31 @@ def searchAnimeID():
           "\nScore:", score, "\nRank:", rank, "\nPopularity:", popularity, "\nYear:", year)
 
 
+
+def getRandomAnime():
+
+
+    url_random = "https://api.jikan.moe/v4/random/anime"
+
+    search_anime = requests.get(url_random).json()
+
+    anime_id = search_anime["data"]['mal_id']
+    anime_url = search_anime["data"]['url']
+    anime_title = search_anime["data"]['title']
+    anime_title_english = search_anime["data"]['title_english']
+    type = search_anime["data"]['type']
+    episodes = search_anime["data"]['episodes']
+    status = search_anime["data"]['status']
+    score = search_anime["data"]['score']
+    rank = search_anime["data"]['rank']
+    popularity = search_anime["data"]['popularity']
+    year = search_anime["data"]['year']
+
+    print("\nTitle:", anime_title, "\nTitle(English):", anime_title_english, "\nMal ID:", anime_id, "\nUrl:", anime_url,
+          "\nEpisodes:", episodes, "\nType:", type, "\nSatus:", status,
+          "\nScore:", score, "\nRank:", rank, "\nPopularity:", popularity, "\nYear:", year)
+
+
 def search_users():
 
 
@@ -100,7 +137,7 @@ def search_users():
     profile_url = user_data["data"]["url"]
     location = user_data["data"]["location"]
 
-    print("Info:","\nMal ID:",mal_id,"\nUsername:",username,"\n url profile:",profile_url,"\n Location:",location)
+    print("Info:","\nMal ID:",mal_id,"\nUsername:",username,"\nurl profile:",profile_url,"\n Location:",location)
 
 
 if __name__ == '__main__':
@@ -108,15 +145,17 @@ if __name__ == '__main__':
     opc = ""
     while opc != "exit":
 
-        print("\n===================================================")
-        print("                     Choose an option")
-        print("===================================================")
-        print("  [1] - Show top animes ")
-        print("  [2] - Search anime")
-        print("  [3] - Search anime by ID")
-        print("  [4] - Search user")
-        print("  [exit]")
-        print("===================================================")
+        print("""\n===================================================
+                Choose an option
+===================================================
+    [1] - Show top animes 
+    [2] - Search anime
+    [3] - Search anime by ID
+    [4] - Show random anime
+    [5] - Search user
+    [exit]
+===================================================
+""")
 
         opc = input("Choose an option: ")
 
@@ -127,6 +166,8 @@ if __name__ == '__main__':
         elif opc == "3":
             searchAnimeID()
         elif opc == "4":
+            getRandomAnime()
+        elif opc == "5":
             search_users()
         elif opc == "exit":
             print("\nA sair...")
