@@ -50,7 +50,7 @@ def searchAnime():
         popularity = search_anime["data"][i]['popularity']
         year = search_anime["data"][i]['year']
 
-        print("Mal ID:",anime_id, "\nUrl:",anime_url, "\nTitle:",anime_title,"\nTitle(English):",anime_title_english,"\nEpisodes:",episodes,"\nType:",type,"\nSatus:",status,
+        print("\nTitle:",anime_title,"\nTitle(English):",anime_title_english,"\nMal ID:",anime_id, "\nUrl:",anime_url,"\nEpisodes:",episodes,"\nType:",type,"\nSatus:",status,
               "\nScore:",score, "\nRank:",rank,"\nPopularity:",popularity, "\nYear:",year)
 
         print("\n----------------------------------------------------------------------------------------")
@@ -80,7 +80,7 @@ def searchAnimeID():
     popularity = search_anime["data"]['popularity']
     year = search_anime["data"]['year']
 
-    print("Mal ID:", anime_id, "\nUrl:", anime_url, "\nTitle:", anime_title, "\nTitle(English):", anime_title_english,
+    print("\nTitle:", anime_title, "\nTitle(English):", anime_title_english, "\nMal ID:", anime_id, "\nUrl:", anime_url,
           "\nEpisodes:", episodes, "\nType:", type, "\nSatus:", status,
           "\nScore:", score, "\nRank:", rank, "\nPopularity:", popularity, "\nYear:", year)
 
