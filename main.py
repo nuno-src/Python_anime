@@ -138,8 +138,13 @@ def search_users():
     username = user_data["data"]["username"]
     profile_url = user_data["data"]["url"]
     location = user_data["data"]["location"]
+    gender = user_data["data"]["gender"]
+    birthd = user_data["data"]["birthday"]
+    joined = user_data["data"]["joined"]
+    fjoined = joined.rstrip("T00:00:00+00:00")
 
-    print("Info:","\nMal ID:",mal_id,"\nUsername:",username,"\nurl profile:",profile_url,"\n Location:",location)
+    #print("Info:","\nMal ID:",mal_id,"\nUsername:",username,"\nLocation:",location, "\nurl profile:",profile_url)
+    print(f"Info: \nMal ID: {mal_id} \nUsername: {username} \nLocation: {location} \nGender: {gender} \nBirthday: {birthd} \nJoined: {fjoined} \nurl profile: {profile_url}")
 
 
 if __name__ == '__main__':
