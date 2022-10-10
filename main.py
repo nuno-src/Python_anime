@@ -47,7 +47,7 @@ def searchAnime():
 
     url_search = f"https://api.jikan.moe/v4/anime/?q={anime_name}/Zero&page=1"
 
-    search_anime = requests.get(url_search).json()
+    search_anime = requests.get(url_search).json() 
 
     for i in range(0, 4):
         anime_id = search_anime["data"][i]['mal_id']
@@ -87,13 +87,14 @@ def searchAnimeID():
     type = search_anime["data"]['type']
     episodes = search_anime["data"]['episodes']
     status = search_anime["data"]['status']
+    rating = search_anime["data"]['rating']
     score = search_anime["data"]['score']
     rank = search_anime["data"]['rank']
     popularity = search_anime["data"]['popularity']
     year = search_anime["data"]['year']
 
     print("\nTitle:", anime_title, "\nTitle(English):", anime_title_english, "\nMal ID:", anime_id, "\nUrl:", anime_url,
-          "\nEpisodes:", episodes, "\nType:", type, "\nSatus:", status,
+          "\nEpisodes:", episodes, "\nType:", type, "\nSatus:", status, "\nRating:", rating,
           "\nScore:", score, "\nRank:", rank, "\nPopularity:", popularity, "\nYear:", year)
 
 
@@ -112,13 +113,14 @@ def getRandomAnime():
     type = search_anime["data"]['type']
     episodes = search_anime["data"]['episodes']
     status = search_anime["data"]['status']
+    rating = search_anime["data"]['rating']
     score = search_anime["data"]['score']
     rank = search_anime["data"]['rank']
     popularity = search_anime["data"]['popularity']
     year = search_anime["data"]['year']
 
     print("\nTitle:", anime_title, "\nTitle(English):", anime_title_english, "\nMal ID:", anime_id, "\nUrl:", anime_url,
-          "\nEpisodes:", episodes, "\nType:", type, "\nSatus:", status,
+          "\nEpisodes:", episodes, "\nType:", type, "\nSatus:", status, "\nRating:", rating,
           "\nScore:", score, "\nRank:", rank, "\nPopularity:", popularity, "\nYear:", year)
 
 
